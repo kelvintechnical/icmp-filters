@@ -1,11 +1,11 @@
 # Lab: Configure ICMP Filters — `firewall-cmd --add-icmp-block`
 
-**Series:** linux-ops-mastery — RHCSA Firewall
-**Subjects covered:** ICMP types, **`echo-request`** vs **`echo-reply`**, **`firewall-cmd --add-icmp-block`**, **`--query-icmp-block`**, **`--list-icmp-blocks`**, **`--permanent`**, **`--reload`**, operational trade-offs (hiding vs breaking path MTU discovery)
-**Career arcs covered:** RHCSA (EX200 — reduce trivial network noise), RHCE (Ansible `icmp_block:`), SRE (mitigate reflection/flood noise — layered with real DDoS defenses), DevOps (lock down bastions), AI/MLOps (internal GPU headnodes that should not answer discovery pings)
-**Prerequisite:** Running `firewalld`; basic ICMP vocabulary; awareness that **blocking all ICMP** breaks some legitimate TCP flows
-**Time Estimate:** 30 to 45 minutes
-**Difficulty arc:** Task 1 inventory · 2–3 runtime block `echo-request` · 4 permanent + reload · 5 edge: query + optional `echo-reply` discussion · 6 capstone + remove blocks cleanup
+- **Series:** linux-ops-mastery — RHCSA Firewall
+- **Subjects covered:** ICMP types, **`echo-request`** vs **`echo-reply`**, **`firewall-cmd --add-icmp-block`**, **`--query-icmp-block`**, **`--list-icmp-blocks`**, **`--permanent`**, **`--reload`**, operational trade-offs (hiding vs breaking path MTU discovery)
+- **Career arcs covered:** RHCSA (EX200 — reduce trivial network noise), RHCE (Ansible `icmp_block:`), SRE (mitigate reflection/flood noise — layered with real DDoS defenses), DevOps (lock down bastions), AI/MLOps (internal GPU headnodes that should not answer discovery pings)
+- **Prerequisite:** Running `firewalld`; basic ICMP vocabulary; awareness that **blocking all ICMP** breaks some legitimate TCP flows
+- **Time Estimate:** 30 to 45 minutes
+- **Difficulty arc:** Task 1 inventory · 2–3 runtime block `echo-request` · 4 permanent + reload · 5 edge: query + optional `echo-reply` discussion · 6 capstone + remove blocks cleanup
 
 ---
 
@@ -160,7 +160,6 @@ sudo firewall-cmd --permanent --list-icmp-blocks
 ```text
 running
 echo-request
-
 
 ```
 
